@@ -2,11 +2,14 @@
 -
  
   # Target: where our play will run and options it will run with
-  hosts: 192.168.1.107
+  hosts: 192.168.1.150
   # Task: the list of tasks that will be executed within the playbook
   tasks:
-    - name: Ensure 7-Zip is installed via Chocolatey
-      win_chocolatey:
-       name: 7zip
-       state: present
+- name: Disable Domain firewall
+  win_firewall:
+    state: disabled
+    profiles:
+    - Private
+    - Public
+  tags: disable_firewall
 ...
