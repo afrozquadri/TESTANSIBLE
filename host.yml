@@ -11,5 +11,5 @@
        profiles:
         - Private
         - Public
-  tags: disable_firewall
+      tags: disable_firewall
 ...
