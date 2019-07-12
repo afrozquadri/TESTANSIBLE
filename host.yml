@@ -5,11 +5,11 @@
   hosts: 192.168.1.150
   # Task: the list of tasks that will be executed within the playbook
   tasks:
-    - name: Disable Domain firewall
-      win_firewall:
-       state: disabled
-       profiles:
-        - Private
-        - Public
-      tags: disable_firewall
+   - name: Install only particular updates based on the KB numbers
+     win_updates:
+       category_name:
+       - SecurityUpdates
+       whitelist:
+       - KB4507457 
+       - KB4507448
 ...
